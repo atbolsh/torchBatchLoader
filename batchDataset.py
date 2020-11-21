@@ -12,7 +12,7 @@ at the edge of a batch, it will wait for a disk read. Unlike BatchDataset, which
 asynchronously loads two batches at a time, so that you usually do not have to 
 wait for a disk read."""
 
-    def __init__(self, formattedDirName):
+    def __init__(self, formattedDirName, transform = None):
         super(BatchDatasetSimple, self).__init__()
         
         if not util.isDirectoryFormatted(formattedDirName):
@@ -20,6 +20,7 @@ wait for a disk read."""
                           "Make a formatted directory first using createFormattedDir or download one online.")
 
         self.dirname = formattedDirName
+        self.transform = transform
         self.N, self.batchSize, self.Nb = util.parseManifest(formattedDirName)
 
         # The last batch might need to be treated specially.
@@ -31,24 +32,31 @@ wait for a disk read."""
 
         self.warmup()
 
+
     def warmup(self, batchIndex = 0):
         """Puts this batch in RAM, for faster access."""
-        # Add the index checks here, later.
+        batchIndex = util.handleIndex(batchIndex, self.Nb) # Checks limits and handles negatives.
+
         self.data = torch.load(os.path.join(self.dirname, 'batch' + str(batchIndex)))
         self.warmBatch = batchIndex
 
+
     def __len__(self):
         return self.N
+
     
     def __getitem__(self, idx):
-        # Add the index checks here, later.
+        idx = util.handleIndex(idx, self.N)
+ 
         batchInd = idx // self.batchSize
 
         if batchInd != self.warmBatch: 
             self.warmup(batchInd) # Get it from disk
 
         dataInd = idx % self.batchSize
-        return self.data[dataInd]
+        sample = self.data[dataInd]
+        if self.transform:
+            sample = self.transform(sample)
 
-
+        return sample
 

@@ -2,6 +2,13 @@ import os
 import torch
 import math
 
+def handleIndex(ind, limit):
+    if ind < 0:
+        ind = limit + ind
+    if ind < 0 or ind > limit - 1:
+        raise IndexError("Index out of bounds")
+    return ind
+
 def writeManifest(dirname, totalRecords, batchSize, numBatches):
     """Writes the correctly formatted manifest."""
     f = open(os.path.join(dirname, 'manifest'), 'w')
