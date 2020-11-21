@@ -1,5 +1,6 @@
 import torchvision
 import torchvision.datasets
+import torch
 
 import util as u
 import batchDataset as bd
@@ -10,8 +11,12 @@ import time
 #formattedDir = "sampleFormattedDir"
 originalDataDir = "CelebA_mini/"
 formattedDir = "sampleFormattedDir_mini"
+#originalDataDir = "torchCelebA_mini/"
+#formattedDir = "sampleFormattedDir_mini"
+
 
 originalDataset = torchvision.datasets.ImageFolder(root = originalDataDir)
+#originalDataset = torchvision.datasets.DatasetFolder(root = originalDataDir, loader = torch.load, is_valid_file=(lambda x: True))
 batchDataset = bd.BatchDatasetSimple(formattedDir)
 
 
