@@ -38,3 +38,21 @@ Time to scroll through original dataset is 2.2095208168029785 seconds.
 Time to scroll through batched dataset is 1.2857654094696045 seconds.
 End of speed test.
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mini test, personal machine, tensors in both places, warm caches:
+
+To recapitulate:
+Time to scroll through original dataset is 1.0560426712036133 seconds.
+Time to scroll through batched dataset is 0.9664344787597656 seconds.
+End of speed test.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mini test, personal machine, tensors in both places, cold caches:
+
+o recapitulate:
+Time to scroll through original dataset is 2.2043159008026123 seconds.
+Time to scroll through batched dataset is 1.251260757446289 seconds.
+End of speed test.
+
