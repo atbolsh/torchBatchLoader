@@ -1,0 +1,40 @@
+
+
+## This file contains copy-pasted bottoms of _speed_test printouts in different settings.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Full test, personal machine:
+
+To recapitulate:
+Time to scroll through original dataset is 201.26431322097778 seconds.
+Time to scroll through batched dataset is 117.96076130867004 seconds.
+End of speed test.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mini test, personal machine:
+
+To recapitulate:
+Time to scroll through original dataset is 1.3700156211853027 seconds.
+Time to scroll through batched dataset is 0.6320734024047852 seconds.
+End of speed test.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mini test, Google Colab, mounted Google Drive:
+
+To recapitulate:
+Time to scroll through original dataset is 301.75566577911377 seconds.
+Time to scroll through batched dataset is 14.877449035644531 seconds.
+End of speed test.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mini test, Google Colab, copied into the '/home/':
+
+To recapitulate:
+Time to scroll through original dataset is 2.2095208168029785 seconds.
+Time to scroll through batched dataset is 1.2857654094696045 seconds.
+End of speed test.
+
