@@ -9,14 +9,14 @@ import time
 
 #originalDataDir = "CelebA/celeba/img_align_celeba/"
 #formattedDir = "sampleFormattedDir"
-#originalDataDir = "CelebA_mini/"
-#formattedDir = "sampleFormattedDir_mini"
-originalDataDir = "torchCelebA_mini/"
+originalDataDir = "CelebA_mini/"
 formattedDir = "sampleFormattedDir_mini"
+#originalDataDir = "torchCelebA_mini/"
+#formattedDir = "sampleFormattedDir_mini"
 
 
-#originalDataset = torchvision.datasets.ImageFolder(root = originalDataDir)
-originalDataset = torchvision.datasets.DatasetFolder(root = originalDataDir, loader = torch.load, is_valid_file=(lambda x: True))
+originalDataset = torchvision.datasets.ImageFolder(root = originalDataDir)
+#originalDataset = torchvision.datasets.DatasetFolder(root = originalDataDir, loader = torch.load, is_valid_file=(lambda x: True))
 batchDataset = bd.BatchDatasetSimple(formattedDir)
 
 

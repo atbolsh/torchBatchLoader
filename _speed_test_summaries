@@ -13,11 +13,19 @@ End of speed test.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mini test, personal machine:
+Mini test, personal machine: # NOTE: this is very unstable and depends on the cache.
 
 To recapitulate:
 Time to scroll through original dataset is 1.3700156211853027 seconds.
 Time to scroll through batched dataset is 0.6320734024047852 seconds.
+End of speed test.
+
+## More typical example, still with warm caches:
+
+Time to scroll through batched dataset is 0.9535143375396729 seconds.
+To recapitulate:
+Time to scroll through original dataset is 1.8801093101501465 seconds.
+Time to scroll through batched dataset is 0.9535143375396729 seconds.
 End of speed test.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
